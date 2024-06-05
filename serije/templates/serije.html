@@ -3,6 +3,25 @@
 
 {% block content %}
 
-    <h1>Hello, world!</h1>
+    <h2>Serije</h2>
+
+    <div class="kontejner">
+
+        <div class="lista">
+
+            {% for s in serije %}
+                <div class="objekt">
+                    <div class="slika">
+                        <a href="{{ s.get_absolute_url }}" class="">
+                          <img src="{{ s.image.url }}" alt="{{ s.title }}" class="slicica">
+                        </a>
+                    </div>
+                    <p>{{ s.title }}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
 
 {% endblock %}

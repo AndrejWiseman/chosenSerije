@@ -18,7 +18,7 @@ class Serije(models.Model):
     date = models.DateTimeField(auto_now_add=True, null=False, blank=False)
 
     def get_absolute_url(self):
-        return reverse('serije:serije-detail', kwargs={'slug': self.slug})
+        return reverse('serije:serije-detaljno', kwargs={'slug': self.slug})
 
 
 class Epizoda(models.Model):
@@ -28,7 +28,6 @@ class Epizoda(models.Model):
     ep = models.CharField(max_length=120, null=True, blank=True)
     epizode_link = models.CharField(max_length=300)
     epizode_preuzmi = models.CharField(default='', max_length=300)
-
 
     def __str__(self):
         return self.ep
