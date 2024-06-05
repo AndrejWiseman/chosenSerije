@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/filmovi-detaljno.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="kontejner">
+
+        <div class="detaljno">
+
+            <div class="info">
+                <div class="slika-info">
+                    <img src="{{ f_detaljno.image.url }}" alt="{{ f_detaljno.title }}">
+                </div>
+                <div class="ime-info">
+                    <h3>{{ f_detaljno.title }}</h3>
+                    <p class="orig"><small>Originalni naziv: {{ f_detaljno.originalni_naziv }}</small></p>
+
+                    <div class="imdb-god">
+                        <p class="god">{{ f_detaljno.godina }}</p>
+                        <p class="zanr">{{ f_detaljno.zanr }}</p>
+                        <p class="imdb"><span>IMDb</span> {{ f_detaljno.imdb_ocena }}</p>
+                    </div>
+
+                    <a href="#" class="dugme btn">Gledaj online</a>
+                </div>
+            </div>
+            <div class="sadrzaj">
+                <h5>Sadržaj:</h5>
+                <p>{{ f_detaljno.description }}</p>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

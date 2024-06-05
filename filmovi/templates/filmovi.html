@@ -1,19 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/pocetna.css' %}">
-{% endblock %}
 
 {% block content %}
 
-    <h2>Novi dodani filmovi i serije</h2>
+    <h2>Filmovi</h2>
 
     <div class="kontejner">
 
         <div class="lista">
 
-            {% for s in combined %}
+            {% for s in filmovi %}
                 <div class="objekt">
                     <div class="slika">
                         <a href="{{ s.get_absolute_url }}" class="">

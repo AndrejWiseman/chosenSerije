@@ -1,12 +1,52 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/serije-detaljno.css' %}">
+{% endblock %}
 
 {% block content %}
 
     <div class="kontejner">
 
-        <div class="lista">
+        <div class="detaljno">
 
-            <h1>{{ s_detaljno.title }}</h1>
+            <div class="info">
+                <div class="slika-info">
+                    <img src="{{ s_detaljno.image.url }}" alt="{{ s_detaljno.title }}">
+                </div>
+                <div class="ime-info">
+                    <h3>{{ s_detaljno.title }}</h3>
+                    <p class="orig"><small>Originalni naziv: {{ s_detaljno.originalni_naziv }}</small></p>
+
+                    <div class="imdb-god">
+                        <p class="god">{{ s_detaljno.godina }}</p>
+                        <p class="zanr">{{ s_detaljno.zanr }}</p>
+                        <p class="imdb"><span>IMDb</span> {{ s_detaljno.imdb_ocena }}</p>
+                    </div>
+
+{#                    <a href="#" class="dugme btn">Gledaj online</a>#}
+                </div>
+            </div>
+            <div class="sadrzaj">
+                <h5>Sadržaj:</h5>
+                <p>{{ s_detaljno.description }}</p>
+            </div>
+
+            <div class="linkovi">
+                <ul class="list-group list-group-flush">
+                    {% for e in epizoda %}
+                        <li class="list-group-item list-group-item-dark lista-link">
+                            <p class="epizoda-link">
+                                Sezona: {{ e.sezona }} Epizoda {{ e.ep }}
+                                <a href="{{ e.epizode_link }}" class="btn dugme btn-sm" target="_blank">Gledaj</a>
+                            </p>
+{#                                <a href="{{ e.epizode_preuzmi }}" class="btn btn-info btn-sm m-1">Preuzmi</a>#}
+{#                            <a href="{{ e.epizode_link }}" class="btn btn-info btn-sm" target="_blank">Preuzmi prevod</a>#}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
 
         </div>
 

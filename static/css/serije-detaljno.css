@@ -1,0 +1,73 @@
+
+
+
+.detaljno {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.info {
+    display: flex;
+    gap: 30px;
+}
+
+.slika-info img {
+    width: 180px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.ime-info h3 {
+    margin: 0;
+}
+.orig {
+    font-style: italic;
+}
+.god {
+    margin: 0;
+}
+.zanr {
+    font-style: italic;
+}
+.imdb span {
+    color: #F5DE50;
+}
+
+.sadrzaj {
+    margin-top: 20px;
+}
+.sadrzaj h5 {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.epizoda-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+.lista-link {
+    background-color: #171717;
+    color: #8a8a8a;
+}
+.dugme {
+    background-color: #8a8a8a;
+}
+.dugme:hover {
+    background-color: #7b7a7a;
+    color: antiquewhite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
